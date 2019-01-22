@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <PREPROCESSOR_DEFS>WIN32;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0501;BOT_PROTECTION;OTCLIENT;CRASH_HANDLER;FW_GRAPHICS;FW_NET;FW_SOUND;FW_XML;BUILD_COMMIT="devel";BUILD_REVISION="0";VERSION="0.6.6";AB</PREPROCESSOR_DEFS>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OTCLIENT_INCLUDES)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(OTCLIENT_LIBDEPS)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <LargeAddressAware>true</LargeAddressAware>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+    <!-- <ResourceCompile>
+      <PreprocessorDefinitions>$(PREPROCESSOR_DEFS)</PreprocessorDefinitions>
+    </ResourceCompile> -->
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="PREPROCESSOR_DEFS">
+      <Value>$(PREPROCESSOR_DEFS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
