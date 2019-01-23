@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quests>
+	<!-- Demon Oak Quest -->
+	<quest name="Demon Oak Quest" startstorageid="1013" startstoragevalue="1">
+		<mission name="Mission 1 - Infested Area" storageid="1013" startvalue="1" endvalue="1">
+			<missionstate id="1" description="You have explored the infested area, return to Oldrak and talk about the demon oak."/>
+		</mission>
+		<mission name="Mission 2 - Final Cut" storageid="1013" startvalue="2" endvalue="3">
+			<missionstate id="2" description="By using the holy hallowed axe, you will be able to defeat the Demon Oak. Beware! Demon Oak will try to lure you with bribery."/>
+			<missionstate id="3" description="You have defeated the Demon Oak! Return back to Oldrak and talk about the Demon Oak, he will greatly reward you."/>
+		</mission>
+		<mission name="Mission 3 - Final Location" storageid="1013" startvalue="4" endvalue="5">
+			<missionstate id="4" description="Oldrak said, find a grave stone with inscripted text: Yesim Adeit. Which is located south of the infected area."/>
+			<missionstate id="5" description="You have completed Demon Oak Quest! Oldrak is really thankful for your help."/>
+		</mission>
+	</quest>
+
+	<!-- Annihilator Quest -->
+	<quest name="Annihilator Quest" startstorageid="5000" startstoragevalue="1">
+		<mission name="Annihilator" storageid="5000" startvalue="1" endvalue="1">
+				<missionstate id="1" description="You have faced the 6 Demon's of hell."/>
+		</mission>
+	</quest>
+	
+	<!-- Demon Helmet Quest -->
+	<quest name="Demon Helmet Quest" startstorageid="100136" startstoragevalue="1">
+		<mission name="Demon Helmet Quest" storageid="100136" startvalue="1" endvalue="1">
+				<missionstate id="1" description="You have completed Demon Helmet Quest."/>
+		</mission> 
+	</quest> 
+	
+	<!-- Behemoth Quest -->
+	<quest name="Behemoth Quest" startstorageid="100104" startstoragevalue="1">
+		<mission name="Behemoth Quest" storageid="100104" startvalue="1" endvalue="1">
+				<missionstate id="1" description="You have completed getting through the Behemoth's."/>
+		</mission>
+	</quest>
+	
+	<!-- Svarground Arena Quest -->
+	<quest name="The Ultimate Challenges" startstorageid="50140" startstoragevalue="1">
+		<mission name="Barbarian Arena - Greenhorn Mode" storageid="50140" startvalue="1" endvalue="2">
+				<missionstate id="1" description="You have to defeat all enemies in this mode." />
+				<missionstate id="2" description="You have defeated all enemies in this mode." />
+		</mission>
+				<mission name="Barbarian Arena - Scrapper Mode" storageid="50141" startvalue="1" endvalue="2">
+				<missionstate id="1" description="You have to defeat all enemies in this mode." />
+				<missionstate id="2" description="You have defeated all enemies in this mode." />
+		</mission>
+				<mission name="Barbarian Arena - Warlord Mode" storageid="50142" startvalue="1" endvalue="2">
+				<missionstate id="1" description="You have to defeat all enemies in this mode." />
+				<missionstate id="2" description="You have defeated all enemies in this mode." />
+		</mission>
+	</quest>
+	
+	<!-- Elemental Spheres -->
+	<!-- Missing -->
+	
+	<!-- The New Frontier -->
+	<quest name="The New Frontier" startstorageid="12130" startstoragevalue="1">
+		<mission name="Mission 01: New Land" storageid="12131" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Ongulf sends you to explore the passage to the east of farmine." />
+			<missionstate id="2" description="You have found the passage through the mountains and can report Ongulf about your success." />
+			<missionstate id="3" description="You already reported Ongulf your success! Ask Ongulf for new mission!" />
+		</mission>
+		<mission name="Mission 02: From Kazordoon With Love" storageid="12132" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Ongulf will tell you that he needs to send a message to the dwarves in Kazordoon. Travel there and then walk to the Dwarf Mines to the west. Cross the two rivers and find Melfar." />
+			<missionstate id="2" description="Melfar gave you a Flask with Beaver Bait that you must use on the 3 trees(Trees will be marked on your map)." />
+			<missionstate id="3" description="You marked 1 of 3 trees with Beaver Bait in near the Dwarf Mines" />
+			<missionstate id="4" description="You marked 2 of 3 trees with Beaver Bait in near the Dwarf Mines" />
+			<missionstate id="5" description="You marked all 3 trees with Beaver Bait in near the Dwarf Mines. Return to talk to Melfar before heading back to Farmine." />
+			<missionstate id="6" description="Return to Ongulf and report your mission!" />
+		</mission>
+		<mission name="Mission 03: Strangers in the Night" storageid="12133" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You need to find the tribe which lives in the mountains. Find some vines in this mountain, climb up there and find out who is spying on us!" />
+			<missionstate id="2" description="Return to Ongulf and report your mission about primitive humans." />
+			<missionstate id="3" description="You already reported Ongulf about primitive humans! Ask Ongulf for new mission!" />
+		</mission>
+		<mission name="Mission 04: The Mine Is Mine" storageid="12134" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Head back to the levers and this time use the left one. Go North through the tunnel of Stone Golems. Kill the boss, Shard of Corruption at the end of the tunnel." />
+			<missionstate id="2" description="You killed the Shard of Corruption. Return to Ongulf and report your mission!" />
+		</mission>
+		<mission name="Mission 05: Getting Things Busy" storageid="12135" startvalue="1" endvalue="7">
+			<missionstate id="1" description="This mission consists of getting support from 6 people (King Tibianus in Thais, Leeland in Venore, Angus in Port Hope, Wyrdin in the Ivory Towers, Telas in Edron, Humgolf in Kazordoon  around Tibia. You need to ask for farmine and then you either need to Flatter, Threaten, Impress, Bluff, Reason or Plea him!" />
+			<missionstate id="2" description="You got support from 1 of 6 people, King Tibianus in Thais, Leeland in Venore, Angus in Port Hope, Wyrdin in the Ivory Towers, Telas in Edron and Humgolf in Kazordoon. You need to ask for farmine and then you either need to Flatter, Threaten, Impress, Bluff, Reason or Plea him!" />
+			<missionstate id="3" description="You got support from 2 of 6 people, King Tibianus in Thais, Leeland in Venore, Angus in Port Hope, Wyrdin in the Ivory Towers, Telas in Edron and Humgolf in Kazordoon. You need to ask for farmine and then you either need to Flatter, Threaten, Impress, Bluff, Reason or Plea him!" />
+			<missionstate id="4" description="You got support from 3 of 6 people, King Tibianus in Thais, Leeland in Venore, Angus in Port Hope, Wyrdin in the Ivory Towers, Telas in Edron and Humgolf in Kazordoon. You need to ask for farmine and then you either need to Flatter, Threaten, Impress, Bluff, Reason or Plea him!" />
+			<missionstate id="5" description="You got support from 4 of 6 people, King Tibianus in Thais, Leeland in Venore, Angus in Port Hope, Wyrdin in the Ivory Towers, Telas in Edron and Humgolf in Kazordoon. You need to ask for farmine and then you either need to Flatter, Threaten, Impress, Bluff, Reason or Plea him!" />
+			<missionstate id="6" description="You got support from 5 of 6 people, King Tibianus in Thais, Leeland in Venore, Angus in Port Hope, Wyrdin in the Ivory Towers, Telas in Edron and Humgolf in Kazordoon. You need to ask for farmine and then you either need to Flatter, Threaten, Impress, Bluff, Reason or Plea him!" />
+			<missionstate id="7" description="You got support from all needed people to help farmine! Return to Ongulf and report your mission!" />
+		</mission>
+		<mission name="Mission 06: Days Of Doom" storageid="12136" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Go to Curos, leader of the Orcs, in the middle of the Zao Steppe in the north-east area of an Orc camp. Ask for a mission and accept it." />
+			<missionstate id="2" description="Enter the ring of battle, close to Curos quarter. Face Mooh'Tah Master in a battle and survive for two minutes. Return to him after you have passed this test." />
+			<missionstate id="3" description="You passed the test of Curos. Return to Ongulf and report your mission!" />
+		</mission>
+		<mission name="Mission 07: Messengers Of Peace" storageid="12137" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You now have to contact the Lizards, the real rulers of Zao. Find them, contact them, talk to them, scare them, bribe them, whatever." />
+			<missionstate id="2" description="You have been trapped! Find a way out!" />
+			<missionstate id="3" description="You found the Lizards!" />
+		</mission>
+		<mission name="Mission 08: An Offer You Can't Refuse" storageid="12138" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Take the boat at the northern of Dragonblaze Peaks to tournament Isle. Ask Zurak for a passage. There you'll learn anything you need to know about the great tournament. Ask there Chrak for the battle." />
+			<missionstate id="2" description="You agreed the Offer." />
+		</mission>
+		<mission name="Mission 09: Mortal Combat" storageid="12139" startvalue="1" endvalue="3">
+			<missionstate id="1" description="You have to go into the Arena with another player, because 2 players are needed, at the same time, to enter. Choose your companion wisely!" />
+			<missionstate id="2" description="You have won! Report Chrak your mission about the battle." />
+			<missionstate id="3" description="Go back to Farmine and talk to Ongulf about your mission." />
+		</mission>
+		<mission name="Mission 10: New Horizons" storageid="12140" startvalue="1" endvalue="1" description="You now have permission to use the Magic Carpet on the mountain above Farmine, Cael now accepts more Tomes of Knowledge from you and you got the Warmaster Outfit!" />
+		<mission name="Tome of Knowledge Counter" storageid="12141" startvalue="1" endvalue="12">
+			<missionstate id="1" description="You brought the fist Tome of Knowledge to Cael. He learnt more about the lizard culture. Pompan will sell you dragon tapestries from now on." />
+			<missionstate id="2" description="You brought the second Tome of Knowledge to Cael. He learnt more about the minotaur culture. Pompan will sell you minotaur backpacks from now on." />
+			<missionstate id="3" description="You brought the third Tome of Knowledge to Cael. He learnt more about the last stand of the draken culture. Esrik will sell you lizard weapon rack from now on." />
+			<missionstate id="4" description="You brought the fourth Tome of Knowledge to Cael. He learnt something interesting about a certain food that the lizardmen apparently prepare. Swolt will trade you a bunch of ripe rice for 10 rice balls from now on." />
+			<missionstate id="5" description="You brought the fifth Tome of Knowledge to Cael. He learnt more about the last stand of the lizards in the South, Zzaion. Pompan will sell you lizard backpacks from now on." />
+			<missionstate id="6" description="You brought the sixth Tome of Knowledge to Cael. He learnt a few things about the primitive human culture on this continent. Cael will sell you War Drums and Didgeridoo from now on." />
+			<missionstate id="7" description="You brought the seventh Tome of Knowledge to Cael. He learnt something interesting about the Zao steppe. Now you to use the snake teleport at the peak of the mountain." />
+			<missionstate id="8" description="You brought the eighth Tome of Knowledge to Cael. He learnt a few things about an illness. Now you can enter a corruption hole in the north-eastern end of Zao." />
+			<missionstate id="9" description="You brought the ninth Tome of Knowledge to Cael. He learnt something interesting about the Draken origin. Esrik will buy lizard equipment from you now." />
+			<missionstate id="10" description="You brought the tenth Tome of Knowledge to Cael. He learnt more about the last stand of the lizard dynasty. Now you can enter the Zao Palace. It is situated deep underground, below the mountain base of the Lizards." />
+			<missionstate id="11" description="You brought the eleventh Tome of Knowledge to Cael. He learnt something interesting about dragons and their symbolism. You can buy a Dragon Statue from NPC Cael after you bring him a Red Lantern." />
+			<missionstate id="12" description="You brought the twelfth Tome of Knowledge to Cael. He learnt something about reveals some of the power structures in Zao. Cael will now make a Dragon Throne for you after you bring him a Red Piece of Cloth. He will reward you with 5000 experience points for each extra tome you give to him." />
+		</mission>
+	</quest>
+	
+	<!-- Vampire Shield Quest -->
+	<quest name="Vampire Shield Quest" startstorageid="5001" startstoragevalue="1">
+		<mission name="Vampire Shield" storageid="5001" startvalue="1" endvalue="1">
+				<missionstate id="1" description="You knew how to explore and found a great reward for that."/>
+		</mission>
+	</quest>
+	
+	<!-- Pits of Inferno -->
+	<quest name="The Pits of Inferno" startstorageid="100095" startstoragevalue="1">
+		<mission name="Acces to shortcuts" storageid="100096" startvalue="1" endvalue="2">
+			<missionstate id="1" description="At the end of this quest you will be able to use shortcuts."/>
+			<missionstate id="2" description="Unlocked shortcut and now do not have to move all the 15 lever and you can use the teleport in the necromancer's house."/>
+		</mission>
+		<mission name="Thrones: Verminor" storageid="2082" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Veminor and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Veminor's spirit."/>
+		</mission>
+		<mission name="Thrones: Infernatil" storageid="2080" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Infernatil and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Infernatil's spirit."/>
+		</mission>
+		<mission name="Thrones: Tafariel" storageid="2081" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Tafariel and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Tafariel's spirit."/>
+		</mission>
+		<mission name="Thrones: Apocalypse" storageid="2083" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Apocalypse and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Apocalypse's spirit."/>
+		</mission>
+		<mission name="Thrones: Pumin" storageid="2086" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Pumin and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Pumin's spirit."/>
+		</mission>
+		<mission name="Thrones: Ashfalor" storageid="2085" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Ashfalor and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Ashfalor's spirit."/>
+		</mission>
+		<mission name="Thrones: Bazir" storageid="2084" startvalue="1" endvalue="2">
+			<missionstate id="1" description="You have to find the throne of Bazir and absorb it's spirit."/>
+			<missionstate id="2" description="You have already absorbed some of Bazir's spirit."/>
+		</mission>
+	</quest>
+	
+	<!-- Sea of Light -->
+	<quest name="Sea of Light" startstorageid="50250" startstoragevalue="1">
+		<mission name="Mission 1: The Plans" storageid="50251" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Spectulus in Edron has sent you on a mission to find out the whereabouts of a certain inventor. A beggar in Edron seems to know more about this topic than he wants to tell." />
+			<missionstate id="2" description="The beggar turned out to be the inventor himself. You successfully convinced him to give you the only remaining plans of his creation. You should return to Spectulus in Edron to tell him the news." />
+			<missionstate id="3" description="You gave the plans to the astronomer. He began reconstructing the invention as soon as he got ahold of them. It will take a while for him to work out the problem which caused the initial failure." />
+			<missionstate id="4" description="You returned to Speculus who finally worked out the failure of the initial construction. He recapitulated the plans and needs only one item before he can start building the magic device." />
+		</mission>
+		<mission name="Mission 2: The Collector" storageid="50252" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Spectulus asked you to enter the Lost Mines beneath Edron and recover a rare crystal. In exchange for it you will gain access to the lair of the Collector who guards a vital component of the device." />
+			<missionstate id="2" description="Luckily, you survived the horrors of the Lost Mines and recovered a rare crystal. You should visit Spectulus in Edron to seek counsel on what to do next." />
+			<missionstate id="3" description="You returned to astronomer Spectulus and gave him the rare crystal." />
+		</mission>
+		<mission name="Mission 3: The Mirror Crystal" storageid="50253" startvalue="1" endvalue="4">
+			<missionstate id="1" description="In order to access the lair of the Collector, you will need to find the creature's well on an ice isle near Carlin. To donate the rare crystal overcome your greed and use it at the well's pedestal." />
+			<missionstate id="2" description="You offered the rare crystal to the creature and can now enter the Collector's lair. Its crystal chamber cannot be accessed by outsiders. You need to find a way to snatch the Mirror Crystal." />
+			<missionstate id="3" description="The Collector has been defeated. You packed the fragile Mirror Crystal into the device Spectulus gave you. All yo have to do now is to return to the astronomer and to present him your acquisition." />
+			<missionstate id="4" description="It may have been the excitement or simple nervousness but as soon as Spectulus removed the crystal, it somehow slipped. Unfinishable for all eternity, the device left yet another scholar in despair." />
+		</mission>
+	</quest>
+	
+	<!-- Fire Axe Quest -->
+	<quest name="Fire Axe Quest" startstorageid="5000" startstoragevalue="1">
+		<mission name="Fire Axe Founded" storageid="5000" startvalue="1" endvalue="1">
+				<missionstate id="1" description="You faced the dragons and were rewarded for your effort."/>
+		</mission>
+	</quest>
+	
+	<!-- Killing in the name of -->
+	<quest name="Killing in the Name of..." startstorageid="100157" startstoragevalue="1">
+	<!-- killing in the name of rank -->
+		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
+		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
+		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
+		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />
+		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />
+
+	<!-- special tasks for killing in the name of -->
+		<mission name="Paw and Fur: Tiquandas Revenge" storageid="22555" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Grizzly Adams told you that there is Tiquandas Revenge hiding somewhere in the jungle of Port Hope. Go find its hideout and kill it." />
+			<missionstate id="2" description="You have slained the Tiquandas Revenge." />
+		</mission>
+		<mission name="Paw and Fur: Demodras" storageid="22556" startvalue="1" endvalue="2">
+			<missionstate id="1" description="Grizzly Adams wanted you to go look for Demodras'  hideout. He also mentioned that it might be somewhere under the Plains of Havoc." />
+			<missionstate id="2" description="You have slained the Demodras." />
+		</mission>
+
+	<!-- Short questlog for bosses, when they have the correct storage. (atm disspears from questlog after jumping into tp)-->
+		<mission name="Paw and Fur: The Snapper" storageid="35000" startvalue="1" endvalue="2" description="Grizzly told you about the Snapper, a crocodile that already killed many citizens of Port Hope. Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Hide" storageid="35001" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Deathbine" storageid="35002" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: The Bloodtusk" storageid="35003" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Shardhead" storageid="35004" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Esmerelda" storageid="35005" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Fleshcrawler" storageid="35006" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Ribstride" storageid="35007" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Bloodweb" storageid="35008" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Thul" storageid="35009" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: The Old Widow" storageid="35010" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Hemming" storageid="35011" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Tormentor" storageid="35012" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Flameborn" storageid="35013" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Fazzrah" storageid="35014" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Tromphonyte" storageid="35015" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Sulphur Scuttler" storageid="35016" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+	<!--missing 	<mission name="Paw and Fur: Sulphur Scuttler" storageid="35017" startvalue="1" endvalue="2" description="Try find its hideout and kill it." /> -->
+		<mission name="Paw and Fur: The Many" storageid="35018" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: The Noxious Spawn" storageid="35019" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Gorgo" storageid="35020" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Stonecracker" storageid="35021" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Leviathan" storageid="35022" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Kerberos" storageid="35023" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Ethershreck" storageid="35024" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Paiz the Pauperizer" storageid="35025" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Bretzecutioner" storageid="35026" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+		<mission name="Paw and Fur: Zanakeph" storageid="35027" startvalue="1" endvalue="2" description="Try find its hideout and kill it." />
+
+
+
+		<!--s for level 6 to 49 -->
+		<mission name="Edron City - Elite Hunting: Trolls" storageid="1501" startvalue="0" endvalue="100" description="You already hunted |STATE|/100 trolls." />
+		<mission name="Edron City - Elite Hunting: Goblins" storageid="1502" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 goblins." />
+		<mission name="Paw and Fur: Trolls" storageid="65001" startvalue="0" endvalue="100" description="You already hunted |STATE|/100 trolls." />
+		<mission name="Paw and Fur: Globins" storageid="65002" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 globins." />
+		<mission name="Paw and Fur: Crocodiles" storageid="65003" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 crocodiles." />
+		<mission name="Paw and Fur: Badgers" storageid="65004" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 badgers." />
+		<mission name="Paw and Fur: Tarantulas" storageid="65005" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 tarantulas." />
+		<mission name="Paw and Fur: Carniphilas" storageid="65006" startvalue="0" endvalue="150" description="You already hunted |STATE|/150 carniphilas." />
+		<mission name="Paw and Fur: Stone Golems" storageid="65007" startvalue="0" endvalue="200" description="You already hunted |STATE|/200 stone golems." />
+		<mission name="Paw and Fur: Mammoths" storageid="65008" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 mammoths." />
+		<mission name="Paw and Fur: Gnarlhounds" storageid="65009" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 gnarlhounds." />
+		<mission name="Paw and Fur: Terramites" storageid="65010" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 terramites." />
+		<mission name="Paw and Fur: Apes" storageid="65011" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 apes." />
+		<mission name="Paw and Fur: Thornback Tortoises" storageid="65012" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 thornback tortoises." />
+		<mission name="Paw and Fur: Gargoyles" storageid="65013" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 gargoyles." />
+
+		<!--Tasks for level 50 to 79 -->
+		<mission name="Paw and Fur: Ice Golems" storageid="65014" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 ice golems." />
+		<mission name="Paw and Fur: Quara Scouts" storageid="65015" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 quara scouts." />
+		<mission name="Paw and Fur: Mutated Rats" storageid="65016" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 mutated rats." />
+		<mission name="Paw and Fur: Ancient Scarabs" storageid="65017" startvalue="0" endvalue="250" description="You already hunted |STATE|/250 ancient scarabs." />
+		<mission name="Paw and Fur: Wyverns" storageid="65018" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 wyverns." />
+		<mission name="Paw and Fur: Lancer Beetles" storageid="65019" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 lancer beetles." />
+		<mission name="Paw and Fur: Wailing Widows" storageid="65020" startvalue="0" endvalue="400" description="You already hunted |STATE|/300 wailing widows." />
+		<mission name="Paw and Fur: Killer Caimans" storageid="65021" startvalue="0" endvalue="250" description="You already hunted |STATE|/300 killer caimans." />
+		<mission name="Paw and Fur: Bonebeasts" storageid="65022" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 bonebeasts." />
+		<mission name="Paw and Fur: Crystal Spiders" storageid="65023" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 crystal spiders." />
+		<mission name="Paw and Fur: Mutated Tigers" storageid="65024" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 mutated tigers." />
+
+		<!--s for level 80 to 129 -->
+		<mission name="Paw and Fur: Underwater Quara" storageid="65025" startvalue="0" endvalue="600" description="You already hunted |STATE|/600 underwater quara." />
+		<mission name="Paw and Fur: Giant Spiders" storageid="65026" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 giant spiders." />
+		<mission name="Paw and Fur: Werewolves" storageid="65027" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 werewolves." />
+		<mission name="Paw and Fur: Nightmares" storageid="65028" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 nightmares." />
+		<mission name="Paw and Fur: Hellspawns" storageid="65029" startvalue="0" endvalue="600" description="You already hunted |STATE|/600 hellspawns." />
+		<mission name="Paw and Fur: High Class Lizards" storageid="65030" startvalue="0" endvalue="800" description="You already hunted |STATE|/800 high class lizards." />
+		<mission name="Paw and Fur: Stampors" storageid="65031" startvalue="0" endvalue="600" description="You already hunted |STATE|/600 stampors." />
+		<mission name="Paw and Fur: Brimstone Bugs" storageid="65032" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 brimstone bugs." />
+		<mission name="Paw and Fur: Mutated Bats" storageid="65033" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 mutated bats." />
+
+		<!--s for level 130+ -->
+		<mission name="Paw and Fur: Hydras" storageid="65034" startvalue="0" endvalue="650" description="You already hunted |STATE|/650 hydras." />
+		<mission name="Paw and Fur: Serpent Spawns" storageid="65035" startvalue="0" endvalue="800" description="You already hunted |STATE|/800 serpent spawns." />
+		<mission name="Paw and Fur: Medusas" storageid="65036" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 medusas." />
+		<mission name="Paw and Fur: Behemoths" storageid="65037" startvalue="0" endvalue="700" description="You already hunted |STATE|/700 behemoths." />
+		<mission name="Paw and Fur: Sea Serpents and Young Sea Serpents" storageid="65038" startvalue="0" endvalue="900" description="You already hunted |STATE|/900 sea serpents and young sea serpents." />
+		<mission name="Paw and Fur: Hellhounds" storageid="65039" startvalue="0" endvalue="250" description="You already hunted |STATE|/250 hellhounds." />
+		<mission name="Paw and Fur: Ghastly Dragons" storageid="65040" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 ghastly dragons." />
+		<mission name="Paw and Fur: Drakens" storageid="65041" startvalue="0" endvalue="900" description="You already hunted |STATE|/900 drakens." />
+		<mission name="Paw and Fur: Destroyers" storageid="65042" startvalue="0" endvalue="650" description="You already hunted |STATE|/650 destroyers." />
+		<mission name="Paw and Fur: Undead Dragons" storageid="65043" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 undead dragons." />
+
+		<!-- Specials -->
+		<mission name="Paw and Fur: Demons" storageid="65044" startvalue="0" endvalue="6666" description="You already hunted |STATE|/6666 demons." />
+		<mission name="Paw and Fur: Green Djinns or Efreets" storageid="65045" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 green djinns or efreets." />
+		<mission name="Paw and Fur: Blue Djinns or Marids" storageid="65046" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 blue djinns or marids." />
+		<mission name="Paw and Fur: Pirates" storageid="65047" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />
+		<mission name="Paw and Fur: Pirates Second" storageid="65048" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />
+		<mission name="Paw and Fur: Minotaurs" storageid="65049" startvalue="0" endvalue="5000" description="You already hunted |STATE|/5000 minotaurs." />
+		<mission name="Paw and Fur: Necromancers and Priestess" storageid="65050" startvalue="0" endvalue="4000" description="You already hunted |STATE|/4000 necromancers and priestess." />
+		<mission name="Paw and Fur: Necromancers and Priestess Second" storageid="65050" startvalue="0" endvalue="1000" description="You already hunted |STATE|/1000 necromancers and priestess." />
+	</quest>
+	
+	<!-- Medusa Shield Quest -->
+	<quest name="Medusa Shield Quest" startstorageid="5003" startstoragevalue="1">
+		<mission name="Medusa Shield" storageid="5003" startvalue="1" endvalue="1">
+				<missionstate id="1" description="You faced the undead boldly, making yourself worthy of this reward."/>
+		</mission>
+	</quest>
+	
+	<!-- Crystal Wand Quest -->
+	<quest name="Crystal Wand Quest" startstorageid="5004" startstoragevalue="1">
+		<mission name="Crystal Wand" storageid="5004" startvalue="1" endvalue="1">
+				<missionstate id="1" description="An old wand, a current treasure. Guarded in the depths of a place once glorious but now forgotten and dominated by dangerous creatures."/>
+		</mission>
+	</quest>
+	
+	<!-- Griffin Shield Quest -->
+	<quest name="Griffin Shield Quest" startstorageid="5005" startstoragevalue="1">
+		<mission name="Griffin Shield Quest" storageid="5005" startvalue="1" endvalue="1">
+				<missionstate id="1" description="A group of explorers tried to get into Demona and died on the way. You have recovered your belongings and finally the souls of these explorers can find peace."/>
+		</mission>
+	</quest>
+	
+	<!-- Naginata Quest -->
+	<quest name="Naginata Quest" startstorageid="5006" startstoragevalue="1">
+		<mission name="Naginata Quest" storageid="5006" startvalue="1" endvalue="1">
+				<missionstate id="1" description="A Japanese weapon can be found around the Thais being unique on the mainland, but is secretly guarded by dragons."/>
+		</mission>
+	</quest>
+</quests>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creaturescripts>
+	<!-- Killing In The Name Of Quest -->
+	<event type="kill" name="KillingInTheNameOfKills" script="quests/killing in the name of/kills.lua" />
+
+	<!-- The New Frontier Quest -->
+	<event type="kill" name="NewFrontierShardOfCorruption" script="quests/the new frontier/ShardOfCorruption.lua" />
+	<event type="kill" name="NewFrontierTirecz" script="quests/the new frontier/TireczKill.lua" />
+
+	<!-- Elemental Spheres Quest -->
+	<event type="kill" name="ElementalSpheresOverlords" script="quests/elemental spheres/OverlordsKill.lua" />
+
+	<!-- Svargrond Arena: Killing a boss -->
+	<event type="kill" name="SvargrondArenaKill" script="quests/svargrond arena/arena_kill.lua" />
+
+	<!-- Default -->
+	<event type="login" name="PlayerLogin" script="default/login.lua" />
+	<event type="logout" name="PlayerLogout" script="default/logout.lua" />
+	<event type="login" name="FirstItems" script="default/firstitems.lua" />
+	<event type="login" name="RegenerateStamina" script="default/regeneratestamina.lua" />
+	<event type="death" name="PlayerDeath" script="default/playerdeath.lua" />
+	<event type="death" name="DropLoot" script="default/droploot.lua" />
+	<event type="extendedopcode" name="ExtendedOpcode" script="default/extendedopcode.lua" />
+</creaturescripts>

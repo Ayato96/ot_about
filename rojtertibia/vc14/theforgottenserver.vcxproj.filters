@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\actions.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ban.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\baseevents.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\bed.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chat.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\combat.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\commands.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\condition.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\configmanager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\connection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\container.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\creature.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\creatureevent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cylinder.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\database.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\databasemanager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\databasetasks.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\depotchest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\depotlocker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\events.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fileloader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\globalevent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\groups.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\guild.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\house.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\housetile.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\inbox.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ioguild.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\iologindata.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\iomap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\iomapserialize.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\iomarket.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\item.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\items.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\luascript.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mailbox.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\monster.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\monsters.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mounts.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\movement.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\networkmessage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\npc.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\otpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\otserv.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\outfit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\outputmessage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\party.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\player.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\position.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protocol.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protocolgame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protocollogin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protocolold.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protocolstatus.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\quests.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\raids.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rsa.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scheduler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scriptmanager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\server.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spawn.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spells.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\talkaction.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tasks.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\teleport.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\thing.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tile.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\trashholder.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vocation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\waitlist.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\weapons.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\wildcardtree.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\account.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\actions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ban.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\baseevents.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\bed.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\chat.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\combat.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\commands.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\condition.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\configmanager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\connection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\const.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\container.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\creature.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\creatureevent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\cylinder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\database.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\databasemanager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\databasetasks.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\definitions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\depotchest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\depotlocker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\enums.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\events.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\fileloader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\globalevent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\groups.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\guild.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\house.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\housetile.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\inbox.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ioguild.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\iologindata.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\iomap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\iomapserialize.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\iomarket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\item.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\itemloader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\items.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lockfree.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\luascript.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mailbox.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\monster.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\monsters.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mounts.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\movement.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\networkmessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\npc.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\otpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\outfit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\outputmessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\party.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\player.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\position.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\protocol.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\protocolgame.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\protocollogin.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\protocolold.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\protocolstatus.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugicast.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\quests.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\raids.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rsa.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\scheduler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\scriptmanager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spawn.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spells.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\talkaction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tasks.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\teleport.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\thing.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\thread_holder_base.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tile.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\town.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\trashholder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vocation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\waitlist.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\weapons.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\wildcardtree.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{67808a12-59fb-4d75-b92d-fe897e070a27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
