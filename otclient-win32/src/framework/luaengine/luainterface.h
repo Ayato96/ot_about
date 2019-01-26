@@ -167,7 +167,7 @@ public:
     void throwError(const std::string& message);
 
     /// Searches for the source of the current running function
-    std::string getCurrentSourcePath(int level = 0);
+    /*std::string getCurrentSourcePath(int level = 0);*/
 
     /// @brief Calls a function
     /// The function and arguments must be on top of the stack in order,
@@ -233,7 +233,7 @@ public:
     void useValue() { pushValue(); ref(); }
 
     const char* typeName(int index = -1);
-    std::string functionSourcePath();
+    /*std::string functionSourcePath();*/
 
     void insert(int index);
     void remove(int index);

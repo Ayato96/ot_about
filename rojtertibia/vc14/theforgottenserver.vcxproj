@@ -84,13 +84,13 @@
       <PreprocessorDefinitions>_CONSOLE;$(PREPROCESSOR_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../thirdparty/boost_1_69_0;../thirdparty/LuaJIT-2.1-20181029/src;C:\Program Files (x86)\Visual Leak Detector\include;../thirdparty/tfs-sdk-3.2/mpir/include;../thirdparty/tfs-sdk-3.2/mysql-connector-c/include;../thirdparty/tfs-sdk-3.2/pugixml/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../thirdparty/boost_1_69_0;../../thirdparty/LuaJIT-2.1-20181029/src;C:\Program Files (x86)\Visual Leak Detector\include;../thirdparty/tfs-sdk-3.2/mpir/include;../thirdparty/tfs-sdk-3.2/mysql-connector-c/include;../thirdparty/tfs-sdk-3.2/pugixml/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>../../thirdparty/boost_1_69_0/lib32-msvc-14.1;../thirdparty/LuaJIT-2.1-20181029/bin/$(Configuration);../thirdparty/tfs-sdk-3.2/mpir/lib;../thirdparty/tfs-sdk-3.2/mysql-connector-c/lib;../thirdparty/tfs-sdk-3.2/pugixml/lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../thirdparty/boost_1_69_0/lib32-msvc-14.1;../../thirdparty/LuaJIT-2.1-20181029/bin/$(Configuration);../thirdparty/tfs-sdk-3.2/mpir/lib;../thirdparty/tfs-sdk-3.2/mysql-connector-c/lib;../thirdparty/tfs-sdk-3.2/pugixml/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>lua51.lib;mpir.lib;libmysql.lib</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;MSVCRT.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -110,7 +110,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;$(PREPROCESSOR_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../../thirdparty/boost_1_69_0;../thirdparty/LuaJIT-2.1-20181029/src;C:\Program Files (x86)\Visual Leak Detector\include;../thirdparty/tfs-sdk-3.2/mpir/include;../thirdparty/tfs-sdk-3.2/mysql-connector-c/include;../thirdparty/tfs-sdk-3.2/pugixml/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../thirdparty/boost_1_69_0;../../thirdparty/LuaJIT-2.1-20181029/src;C:\Program Files (x86)\Visual Leak Detector\include;../thirdparty/tfs-sdk-3.2/mpir/include;../thirdparty/tfs-sdk-3.2/mysql-connector-c/include;../thirdparty/tfs-sdk-3.2/pugixml/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -118,7 +118,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../../thirdparty/boost_1_69_0/lib32-msvc-14.1;../thirdparty/LuaJIT-2.1-20181029/bin/$(Configuration);../thirdparty/tfs-sdk-3.2/mpir/lib;../thirdparty/tfs-sdk-3.2/mysql-connector-c/lib;../thirdparty/tfs-sdk-3.2/pugixml/lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../thirdparty/boost_1_69_0/lib32-msvc-14.1;../../thirdparty/LuaJIT-2.1-20181029/bin/$(Configuration);../thirdparty/tfs-sdk-3.2/mpir/lib;../thirdparty/tfs-sdk-3.2/mysql-connector-c/lib;../thirdparty/tfs-sdk-3.2/pugixml/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>lua51.lib;mpir.lib;libmysql.lib</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;</IgnoreSpecificDefaultLibraries>
     </Link>

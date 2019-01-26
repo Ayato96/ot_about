@@ -21,7 +21,7 @@
  */
 
 #include "client.h"
-#include <framework/core/modulemanager.h>
+/*#include <framework/core/modulemanager.h>*/
 #include <framework/core/resourcemanager.h>
 #include <framework/graphics/graphics.h>
 #include "game.h"

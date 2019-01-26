@@ -10,20 +10,20 @@
 
 # Build results
 
-[Dd]ebug/
-[Rr]elease/
-x64/
-build/
+#[Dd]ebug/
+#[Rr]elease/
+#x64/
+#build/
 testbuild/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-*_i.c
-*_p.c
+#*_i.c
+#*_p.c
 *.ilk
 *.meta
 *.obj
@@ -39,11 +39,11 @@ testbuild/
 *.tmp
 *.tmp_proj
 *.log
+*.tlog
 *.vspscc
 *.vssscc
 .builds
 *.pidb
-*.log
 *.scc
 
 # Visual C++ cache files
@@ -110,7 +110,7 @@ csx
 AppPackages/
 
 # Others
-sql/
+#sql/
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
@@ -173,7 +173,7 @@ pip-log.txt
 #############
 ## TFS / OT
 #############
-config.lua
+#config.lua
 
 
 # Prerequisites

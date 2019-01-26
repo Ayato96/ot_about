@@ -141,12 +141,6 @@
     <ClCompile Include="..\src\framework\core\logger.cpp">
       <Filter>Source Files\framework\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\framework\core\module.cpp">
-      <Filter>Source Files\framework\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\framework\core\modulemanager.cpp">
-      <Filter>Source Files\framework\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\framework\core\resourcemanager.cpp">
       <Filter>Source Files\framework\core</Filter>
     </ClCompile>

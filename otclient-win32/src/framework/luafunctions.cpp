@@ -26,8 +26,8 @@
 #include <framework/core/configmanager.h>
 #include <framework/core/config.h>
 #include <framework/otml/otml.h>
-#include <framework/core/modulemanager.h>
-#include <framework/core/module.h>
+/*#include <framework/core/modulemanager.h>
+#include <framework/core/module.h>*/
 #include <framework/util/crypt.h>
 #include <framework/core/resourcemanager.h>
 #include <framework/graphics/texturemanager.h>
@@ -156,7 +156,7 @@ void Application::registerLuaFunctions()
     g_lua.bindSingletonFunction("g_logger", "fatal", &Logger::fatal, &g_logger);
 
     // ModuleManager
-    g_lua.registerSingletonClass("g_modules");
+    /*g_lua.registerSingletonClass("g_modules");
     g_lua.bindSingletonFunction("g_modules", "discoverModules", &ModuleManager::discoverModules, &g_modules);
     g_lua.bindSingletonFunction("g_modules", "autoLoadModules", &ModuleManager::autoLoadModules, &g_modules);
     g_lua.bindSingletonFunction("g_modules", "discoverModule", &ModuleManager::discoverModule, &g_modules);
@@ -164,7 +164,7 @@ void Application::registerLuaFunctions()
     g_lua.bindSingletonFunction("g_modules", "unloadModules", &ModuleManager::unloadModules, &g_modules);
     g_lua.bindSingletonFunction("g_modules", "reloadModules", &ModuleManager::reloadModules, &g_modules);
     g_lua.bindSingletonFunction("g_modules", "getModule", &ModuleManager::getModule, &g_modules);
-    g_lua.bindSingletonFunction("g_modules", "getModules", &ModuleManager::getModules, &g_modules);
+    g_lua.bindSingletonFunction("g_modules", "getModules", &ModuleManager::getModules, &g_modules);*/
 
     // EventDispatcher
     g_lua.registerSingletonClass("g_dispatcher");
@@ -213,7 +213,7 @@ void Application::registerLuaFunctions()
     g_lua.bindClassMemberFunction<Config>("getFileName", &Config::getFileName);
 
     // Module
-    g_lua.registerClass<Module>();
+    /*g_lua.registerClass<Module>();
     g_lua.bindClassMemberFunction<Module>("load", &Module::load);
     g_lua.bindClassMemberFunction<Module>("unload", &Module::unload);
     g_lua.bindClassMemberFunction<Module>("reload", &Module::reload);
@@ -229,7 +229,7 @@ void Application::registerLuaFunctions()
     g_lua.bindClassMemberFunction<Module>("getVersion", &Module::getVersion);
     g_lua.bindClassMemberFunction<Module>("getSandbox", &Module::getSandbox);
     g_lua.bindClassMemberFunction<Module>("isAutoLoad", &Module::isAutoLoad);
-    g_lua.bindClassMemberFunction<Module>("getAutoLoadPriority", &Module::getAutoLoadPriority);
+    g_lua.bindClassMemberFunction<Module>("getAutoLoadPriority", &Module::getAutoLoadPriority);*/
 
     // Event
     g_lua.registerClass<Event>();

@@ -304,7 +304,7 @@ std::vector<std::string> ResourceManager::discoverPath(const fs::path& path, boo
 
 std::string ResourceManager::resolvePath(const std::string& path)
 {
-    std::string fullPath;
+    /*std::string fullPath;
     if(stdext::starts_with(path, "/"))
         fullPath = path;
     else {
@@ -315,7 +315,16 @@ std::string ResourceManager::resolvePath(const std::string& path)
     }
     if(!(stdext::starts_with(fullPath, "/")))
         g_logger.traceWarning(stdext::format("the following file path is not fully resolved: %s", path));
-    stdext::replace_all(fullPath, "//", "/");
+    stdext::replace_all(fullPath, "//", "/");*/
+    std::string fullPath;
+    if(stdext::starts_with(path, "/"))
+        fullPath = path;
+    else {
+        g_logger.traceWarning(stdext::format("the following file path is not fully resolved: %s -- path must be absolute and start with '/'",
+            path));
+
+        fullPath = "/" + path;
+    }
     return fullPath;
 }
 

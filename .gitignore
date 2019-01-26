@@ -12,7 +12,7 @@
 
 #[Dd]ebug/
 #[Rr]elease/
-x64/
+#x64/
 #build/
 testbuild/
 #[Bb]in/
@@ -22,8 +22,8 @@ testbuild/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-*_i.c
-*_p.c
+#*_i.c
+#*_p.c
 *.ilk
 *.meta
 *.obj
@@ -39,11 +39,11 @@ testbuild/
 *.tmp
 *.tmp_proj
 *.log
+*.tlog
 *.vspscc
 *.vssscc
 .builds
 *.pidb
-*.tlog
 *.scc
 
 # Visual C++ cache files
@@ -113,7 +113,6 @@ AppPackages/
 sql/
 *.Cache
 ClientBin/
-[Ss]tyle[Cc]op.*
 ~$*
 *~
 *.dbmdl
@@ -173,7 +172,7 @@ pip-log.txt
 #############
 ## TFS / OT
 #############
-config.lua
+#config.lua
 
 
 # Prerequisites
@@ -194,3 +193,5 @@ config.lua
 *.smod
 
 thirdparty/boost_1_69_0/
+
+otclient-master/

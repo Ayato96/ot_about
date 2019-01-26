@@ -304,7 +304,8 @@ bool LuaInterface::safeRunScript(const std::string& fileName)
         runScript(fileName);
         return true;
     } catch(stdext::exception& e) {
-        g_logger.error(stdext::format("Failed to load script '%s': %s", fileName, e.what()));
+        g_logger.error(stdext::format("[LuaInterface::safeRunScript] Failed to safe run script '%s': %s",
+            fileName, e.what()));
         return false;
     }
 }
@@ -333,7 +334,9 @@ void LuaInterface::loadScript(const std::string& fileName)
     std::string buffer = g_resources.readFileContents(filePath);
     std::string source = "@" + filePath;
     loadBuffer(buffer, source);*/
-	luaL_loadfile(L, fileName.c_str());
+
+    // 
+    luaL_loadfile(L, fileName.c_str());
 }
 
 void LuaInterface::loadFunction(const std::string& buffer, const std::string& source)
@@ -403,7 +406,7 @@ void LuaInterface::throwError(const std::string& message)
         throw stdext::exception(message);
 }
 
-std::string LuaInterface::getCurrentSourcePath(int level)
+/*std::string LuaInterface::getCurrentSourcePath(int level)
 {
     std::string path;
     if(!L)
@@ -428,7 +431,7 @@ std::string LuaInterface::getCurrentSourcePath(int level)
     }
 
     return path;
-}
+}*/
 
 int LuaInterface::safeCall(int numArgs, int numRets)
 {
@@ -599,7 +602,11 @@ int LuaInterface::lua_loadfile(lua_State* L)
     std::string fileName = g_lua.popString();
 
     try {
-        g_lua.loadScript(fileName);
+        /*g_lua.loadScript(fileName);*/
+
+        std::string filePath = g_resources.guessFilePath(fileName, "lua");
+        std::string realDir = g_resources.getRealDir(filePath);
+        g_lua.loadScript(realDir + "/" + filePath);
         return 1;
     } catch(stdext::exception& e) {
         g_lua.pushNil();
@@ -797,7 +804,7 @@ const char* LuaInterface::typeName(int index)
     return lua_typename(L, type);
 }
 
-std::string LuaInterface::functionSourcePath()
+/*std::string LuaInterface::functionSourcePath()
 {
     std::string path;
 
@@ -815,7 +822,7 @@ std::string LuaInterface::functionSourcePath()
     }
 
     return path;
-}
+}*/
 
 void LuaInterface::insert(int index)
 {

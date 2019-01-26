@@ -24,7 +24,7 @@
 #include <csignal>
 #include <framework/core/clock.h>
 #include <framework/core/resourcemanager.h>
-#include <framework/core/modulemanager.h>
+/*#include <framework/core/modulemanager.h>*/
 #include <framework/core/eventdispatcher.h>
 #include <framework/core/configmanager.h>
 #include "asyncdispatcher.h"
@@ -106,8 +106,8 @@ void Application::deinit()
     g_lua.callGlobalField("g_app", "onTerminate");
 
     // run modules unload events
-    g_modules.unloadModules();
-    g_modules.clear();
+    /*g_modules.unloadModules();
+    g_modules.clear();*/
 
     // release remaining lua object references
     g_lua.collectGarbage();

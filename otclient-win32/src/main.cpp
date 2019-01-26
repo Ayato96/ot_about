@@ -40,10 +40,10 @@ int main(int argc, const char* argv[])
 
     // find script init.lua and run it
     if(!g_resources.discoverWorkDir("init.lua"))
-        g_logger.fatal("Unable to find work directory, the application cannot be initialized.");
+        g_logger.fatal("[main] Unable to find work directory, the application cannot be initialized.");
 
     if(!g_lua.safeRunScript("init.lua"))
-        g_logger.fatal("Unable to run script init.lua!");
+        g_logger.fatal("[main] Unable to run script init.lua!");
 
     // the run application main loop
     g_app.run();
