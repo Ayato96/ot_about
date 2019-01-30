@@ -184,6 +184,10 @@ pip-log.txt
 *.o
 *.obj
 *.exp
+*.db-shm
+*.db-wal
+*.res
+*.dir
 
 # Precompiled Headers
 *.gch
@@ -197,3 +201,4 @@ pip-log.txt
 
 thirdparty/boost_1_69_0/
 libANGLE.lib
+

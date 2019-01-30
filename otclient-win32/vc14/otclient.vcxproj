@@ -103,7 +103,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../thirdparty/boost_1_69_0/lib32-msvc-14.1;../../thirdparty/LuaJIT-2.1-20181029/bin/$(Configuration);../thirdparty/angle-ms-master/src/$(Configuration)_Win32/lib;C:\Program Files (x86)\Visual Leak Detector\include;../thirdparty/otclient-sdk-master/glew-cmake-master/lib/$(Configuration)/Win32;../thirdparty/otclient-sdk-master/libogg-1.3.2/lib;../thirdparty/otclient-sdk-master/libvorbis-1.3.5/lib;../thirdparty/otclient-sdk-master/OpenAL-1.15.1/lib;../thirdparty/otclient-sdk-master/OpenSSL-1.0.2j/lib;../thirdparty/otclient-sdk-master/physfs-2.0.3.1/lib;../thirdparty/otclient-sdk-master/zlib-1.2.11/lib/$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;glew32.lib;glew32s.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;lua51.lib;openal32.lib;libeay32.lib;ssleay32.lib;physfs.lib;zlib.lib;user32.lib;gdi32.lib;Opengl32.lib;Shell32.lib;Dbghelp.lib</AdditionalDependencies>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;glew32.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;lua51.lib;openal32.lib;libeay32.lib;ssleay32.lib;physfs.lib;zlib.lib;user32.lib;gdi32.lib;Opengl32.lib;Shell32.lib;Dbghelp.lib</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;MSVCRT.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -133,7 +133,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>../../thirdparty/boost_1_69_0/lib32-msvc-14.1;../../thirdparty/LuaJIT-2.1-20181029/bin/$(Configuration);../thirdparty/angle-ms-master/src/$(Configuration)_Win32/lib;C:\Program Files (x86)\Visual Leak Detector\include;../thirdparty/otclient-sdk-master/glew-cmake-master/lib/$(Configuration)/Win32;../thirdparty/otclient-sdk-master/libogg-1.3.2/lib;../thirdparty/otclient-sdk-master/libvorbis-1.3.5/lib;../thirdparty/otclient-sdk-master/OpenAL-1.15.1/lib;../thirdparty/otclient-sdk-master/OpenSSL-1.0.2j/lib;../thirdparty/otclient-sdk-master/physfs-2.0.3.1/lib;../thirdparty/otclient-sdk-master/zlib-1.2.11/lib/$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;glew32.lib;glew32s.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;lua51.lib;openal32.lib;libeay32.lib;ssleay32.lib;physfs.lib;zlib.lib;user32.lib;gdi32.lib;Opengl32.lib;Shell32.lib;Dbghelp.lib</AdditionalDependencies>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;glew32.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;lua51.lib;openal32.lib;libeay32.lib;ssleay32.lib;physfs.lib;zlib.lib;user32.lib;gdi32.lib;Opengl32.lib;Shell32.lib;Dbghelp.lib</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
