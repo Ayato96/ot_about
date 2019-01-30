@@ -49,11 +49,11 @@ require(cwd .. "outputmessage")
 
 local _M = {}
 
-function _M:init()
+function _M.init()
 
 end
 
-function _M:terminate()
+function _M.terminate()
     
 end
 

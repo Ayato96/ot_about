@@ -335,8 +335,14 @@ void LuaInterface::loadScript(const std::string& fileName)
     std::string source = "@" + filePath;
     loadBuffer(buffer, source);*/
 
-    // 
-    luaL_loadfile(L, fileName.c_str());
+    std::string filePath = g_resources.guessFilePath(fileName, "lua");
+    if (stdext::starts_with(fileName, "/")) {
+        std::string realFilePath = g_resources.resolvePath(g_resources.getRealDir(filePath) + filePath);
+        luaL_loadfile(L, realFilePath.c_str());
+    }
+    else {
+        luaL_loadfile(L, fileName.c_str());
+    }
 }
 
 void LuaInterface::loadFunction(const std::string& buffer, const std::string& source)
@@ -602,11 +608,7 @@ int LuaInterface::lua_loadfile(lua_State* L)
     std::string fileName = g_lua.popString();
 
     try {
-        /*g_lua.loadScript(fileName);*/
-
-        std::string filePath = g_resources.guessFilePath(fileName, "lua");
-        std::string realDir = g_resources.getRealDir(filePath);
-        g_lua.loadScript(realDir + "/" + filePath);
+        g_lua.loadScript(fileName);
         return 1;
     } catch(stdext::exception& e) {
         g_lua.pushNil();
@@ -1262,7 +1264,7 @@ int LuaInterface::getTop()
 
 void LuaInterface::loadFiles(std::string directory, bool recursive, std::string contains)
 {
-    for(const std::string& fileName : g_resources.listDirectoryFiles(directory)) {
+    /*for(const std::string& fileName : g_resources.listDirectoryFiles(directory)) {
         std::string fullPath = directory + "/" + fileName;
 
         if(recursive && g_resources.directoryExists(fullPath)) {
@@ -1280,6 +1282,30 @@ void LuaInterface::loadFiles(std::string directory, bool recursive, std::string 
             g_lua.loadScript(fullPath);
             g_lua.call(0, 0);
         } catch(stdext::exception& e) {
+            g_lua.pushString(e.what());
+            g_lua.error();
+        }
+    }*/
+
+    for (const std::string& fileName : g_resources.listDirectoryFiles(directory)) {
+        std::string fullPath = directory + "/" + fileName;
+
+        if (recursive && g_resources.directoryExists(fullPath)) {
+            loadFiles(fullPath, true, contains);
+            continue;
+        }
+
+        if (!g_resources.isFileType(fileName, "lua"))
+            continue;
+
+        if (!contains.empty() && fileName.find(contains) == std::string::npos)
+            continue;
+
+        try {
+            g_lua.loadScript(fullPath);
+            g_lua.call(0, 0);
+        }
+        catch (stdext::exception& e) {
             g_lua.pushString(e.what());
             g_lua.error();
         }

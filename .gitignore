@@ -183,6 +183,7 @@ pip-log.txt
 *.lo
 *.o
 *.obj
+*.exp
 
 # Precompiled Headers
 *.gch
@@ -192,6 +193,7 @@ pip-log.txt
 *.mod
 *.smod
 
-thirdparty/boost_1_69_0/
+*.spr
 
-otclient-master/
+thirdparty/boost_1_69_0/
+libANGLE.lib

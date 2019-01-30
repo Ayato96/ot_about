@@ -1,16 +1,15 @@
+local cwd = (...):gsub("%.[^%.]+$", "") .. "."
+require(cwd .. "entergame")
+require(cwd .. "characterlist")
+
 local _M = {}
 
-local cwd = (...):gsub("%.[^%.]+$", "") .. "."
-
-function _M:init()
-    require(cwd .. "entergame")
-    require(cwd .. "characterlist")
-
+function _M.init()
     EnterGame.init()
     CharacterList.init()
 end
 
-function _M:terminate()
+function _M.terminate()
     EnterGame.terminate()
     CharacterList.terminate()
 end

@@ -44,16 +44,14 @@ g_resources.searchAndAddPackages("/", ".otpkg", true)
 -- load settings
 g_configs.loadSettings("/config.otml")
 
-local strTest = "123456"
-local len1 = #strTest
-local len2 = string.len(strTest)
-
 -- load modules
 g_modules = require("utils.modulemanager")
 g_modules.loadModule("corelib")
 g_modules.loadModule("gamelib")
 g_modules.loadModule("client")
 g_modules.loadModule("game_interface")
+
+g_modules.loadModule("tool_monstermaker", "mods.tool_monstermaker")
 
 --
 local script = "/" .. g_app.getCompactName() .. "rc.lua"

@@ -140,7 +140,8 @@ function installLocale(locale)
   end
 end
 
-function installLocales()
+function installLocales(directory)
+  --dofiles(directory)
   local locales = require("locales")
   for i, v in ipairs(locales) do
     installLocale(v)

@@ -1,0 +1,26 @@
+Module
+  name: gamelib
+  description: Contains game related classes
+  author: OTClient team
+  website: https://github.com/edubart/otclient
+
+  dependencies:
+    - game_things
+
+  @onLoad: |
+    dofile '/gamelib/const'
+    dofile '/gamelib/util'
+    dofile '/gamelib/protocol'
+    dofile '/gamelib/protocollogin'
+    dofile '/gamelib/protocolgame'
+    dofile '/gamelib/position'
+    dofile '/gamelib/game'
+
+    dofile '/gamelib/creature'
+    dofile '/gamelib/player'
+    dofile '/gamelib/market'
+    dofile '/gamelib/textmessages'
+    dofile '/gamelib/thing'
+    dofile '/gamelib/spells'
+
+    dofiles '/gamelib/ui'

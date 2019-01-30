@@ -1,4 +1,4 @@
-local require = require
+local require, error = require, error
 local type, pairs, ipairs, setmetatable = type, pairs, ipairs, setmetatable
 local str_find = string.find
 
@@ -9,6 +9,10 @@ local _M = {
     _modules = {},
     _modules_reloaded = nil
 }
+
+function _M.getModules(name)
+    return _M._modules
+end
 
 function _M.getModule(name)
     return _M._modules[name]
@@ -31,15 +35,20 @@ function _M.loadModule(name, modulePath)
         moddef = require(modulePath .. ".__moddef")
         modmt = Module.newmeta(moddef, modulePath)
 
-        -- dependencies module
+        -- check dependencies
         if type(modmt._mt_dependencies) == "table" then
             for i, v in ipairs(modmt._mt_dependencies) do
-                _M.loadModule(v[1], v[2])
+                local depName = v[1]
+                local depModulePath = v[2]
+                if(depName == name) then
+                    error("[ModuleManager.loadModule()] cannot depend on itself -- " .. name)
+                else
+                    _M.loadModule(depName, depModulePath)
+                end
             end
         end
 
         -- this module
-        local modenv
         if modmt._mt_sandboxed then
             mod = SEnv.new()
             SEnv.setGlobalEnvironment(mod)
@@ -52,15 +61,14 @@ function _M.loadModule(name, modulePath)
 
             print("Loaded module(sandboxed) '" .. name .. "'")
             _M._modules[name] = mod
-
  
             --
             mod:_mt_load()
             SEnv.resetGlobalEnvironment()
         else
             mod = require(moddef.classPath)
-            if type(mod) == "boolean" then
-                mod = {}
+            if type(mod) ~= "table" then
+                error("[ModuleManager.loadModule()] module must be a table -- " .. name)
             end
 
             -- inject module meta
@@ -78,7 +86,9 @@ function _M.loadModule(name, modulePath)
         -- load later module
         if type(modmt._mt_loadLater) == "table" then
             for i, v in ipairs(modmt._mt_loadLater) do
-                _M.loadModule(v[1], v[2])
+                local laterName = v[1]
+                local laterModulePath = v[2]
+                _M.loadModule(laterName, laterModulePath)
             end
         end
 

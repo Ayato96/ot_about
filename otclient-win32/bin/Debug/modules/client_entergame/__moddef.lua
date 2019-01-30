@@ -5,7 +5,7 @@ return {
     description = "Manages enter game and character list windows",
     author = "edubart",
     website = "https://github.com/edubart/otclient",
-    sandboxed = true,
+    sandboxed = false, -- 'EnterGame' and 'CharacterList' is global var
     dependencies = {{"client_topmenu"}},
     classPath = cwd .. "mod"
 }

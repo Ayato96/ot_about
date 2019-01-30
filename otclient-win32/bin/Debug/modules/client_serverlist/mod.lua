@@ -1,18 +1,13 @@
-local _M = {}
-
 local cwd = (...):gsub("%.[^%.]+$", "") .. "."
+require(cwd .. "serverlist")
+require(cwd .. "addserver")
 
-function _M:init()
-    require(cwd .. "serverlist")
-    require(cwd .. "addserver")
-
+function init()
     ServerList.init()
     AddServer.init()
 end
 
-function _M:terminate()
+function terminate()
     ServerList.terminate()
     AddServer.terminate()
 end
-
-return _M

@@ -119,7 +119,7 @@ function EnterGame.init()
   local stayLogged = g_settings.getBoolean('staylogged')
   local autologin = g_settings.getBoolean('autologin')
   local clientVersion = g_settings.getInteger('client-version')
-  if clientVersion == 0 then clientVersion = 1074 end
+  if clientVersion == 0 then clientVersion = 1098 end
 
   if port == nil or port == 0 then port = 7171 end
 
@@ -155,6 +155,15 @@ function EnterGame.firstShow()
   local password = g_crypt.decrypt(g_settings.get('password'))
   local host = g_settings.get('host')
   local autologin = g_settings.getBoolean('autologin')
+
+  --
+  account = "test0001"
+  password = "a123123"
+  host = "127.0.0.1"
+  autologin = true
+
+  g_settings.set('autologin', true)
+
   if #host > 0 and #password > 0 and #account > 0 and autologin then
     addEvent(function()
       if not g_settings.getBoolean('autologin') then return end

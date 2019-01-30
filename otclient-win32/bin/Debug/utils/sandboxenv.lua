@@ -1,8 +1,8 @@
-local setfenv = setfenv
+local getfenv, setfenv = getfenv, setfenv
 local setmetatable = setmetatable
 
 local _M = {
-    _env_G = _G or _Env,
+    _env_G = getfenv(0) or _Env,
 }
 
 function _M.getGlobalEnvironment()

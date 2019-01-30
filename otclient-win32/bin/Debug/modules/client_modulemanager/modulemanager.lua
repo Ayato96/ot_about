@@ -49,10 +49,11 @@ function toggle()
   end
 end
 
+--[[
 function refreshModules()
   g_modules.discoverModules()
   listModules()
-end
+end]]
 
 function listModules()
   if not moduleManagerWindow then return end
