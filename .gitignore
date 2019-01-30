@@ -6,6 +6,7 @@
 *.sln.docstates
 *.bak
 .vscode/
+\.vs/
 
 
 # Build results
@@ -187,7 +188,7 @@ pip-log.txt
 *.db-shm
 *.db-wal
 *.res
-*.dir
+*.dir/
 
 # Precompiled Headers
 *.gch
