@@ -1,24 +1,3 @@
-/*
- * Copyright (c) 2013 Ahmed Samy  <f.fallen45@gmail.com>
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
 #include "buffer.h"
 
 #include <assert.h>
@@ -41,294 +20,87 @@
 #include <png.h>
 
 #include "snprintf/mysnprintf.h"
+#include "thingtype.h"
 
 #define OPTPARSE_IMPLEMENTATION 1
 #include "optparse.h"
 
-typedef enum itemtype {
-	Item,
-	Creature
-} itemtype_t;
+#include <vld.h>
 
-typedef struct item {
-	uint16_t id;
-	uint8_t width, height;
-
-	uint16_t *spriteIds;
-	uint32_t spriteCount;
-	itemtype_t iType;
-
-	struct item *next;
-} item_t;
-
-typedef item_t *itemlist_t;
-#define foreach_item(list, i)	\
-	for ((i) = *(list); (i); (i) = (i)->next)
-
-typedef struct {
-	uint8_t red;
-	uint8_t green;
-	uint8_t blue;
-	uint8_t alpha;
-} pixel_t;
-
-typedef struct {
-	pixel_t *pixels;
-	size_t width;
-	size_t height;
-} bitmap_t;
-
-static pixel_t *pixel_at(bitmap_t *bitmap, int x, int y)
+static pixel_t *
+pixel_at(bitmap_t *bitmap, int x, int y)
 {
 	return bitmap->pixels + bitmap->width * x + y;
 }
 
-static
-#ifdef __GNUC__
-	__attribute__((__noreturn__, __format__(__printf__, 1, 2)))
-#endif
-void critical(const char *errmsg, ...)
+static thingtypelist_t *
+load_dat(const char *f, int *maxCount)
 {
-	va_list va;
-	int len;
-	char outmsg[4096];
+	uint16 thingTypes[ThingLastCategory];
 
-	va_start(va, errmsg);
-	len = o_vsnprintf(outmsg, 4096, errmsg, va);
-	va_end(va);
-
-	if (len < 0)
-		abort ();
-
-	puts(outmsg);
-	puts("Error is not recoverable, aborting now...");
-	exit(EXIT_FAILURE);
-}
-
-static item_t *item_new(uint16_t id)
-{
-	item_t *n;
-	if (!(n = malloc(sizeof(*n))))
-		return NULL;
-
-	n->id = id;
-	n->next = NULL;
-	n->spriteIds = NULL;
-	return n;
-}
-
-static __inline void item_destroy(item_t *i)
-{
-	free(i->spriteIds);
-	free(i);
-}
-
-static itemlist_t *itemlist_init(void)
-{
-	itemlist_t *ret;
-
-	ret = calloc(1, sizeof(*ret));
-	if (!ret)
-		return NULL;
-
-	return ret;
-}
-
-static void itemlist_destroy(itemlist_t *list)
-{
-	item_t *tmp, *p;
-
-	tmp = *list;
-	while (tmp) {
-		p = tmp->next;
-		item_destroy(tmp);
-		tmp = p;
-	}
-
-	free(list);
-}
-
-static void itemlist_append(itemlist_t *list, item_t *newItem)
-{
-	newItem->next = *list;
-	*list = newItem;
-}
-
-static item_t *item_unserialize(FILE *fp, uint16_t id)
-{
-	item_t *ret;
-	uint8_t flag;
-
-	if (!(ret = item_new(id))) {
-		fclose(fp);
-		critical("Can't allocate new item of size %d (id %d)", sizeof(*ret), id);
-	}
-
-	for (;;) {
-		/*
-		0x00 = ground tile
-		0x01 = on top
-		0x02 = walk through (doors etc.)
-		0x03 = walk through (arches etc.)
-		0x04 = container
-		0x05 = stackable
-		0x06 = ladder?
-		0x07 = usable
-		0x08 = rune
-		0x09 = writeable
-		0x0A = readable
-		0x0B = fluid container
-		0x0C = splash
-		0x0D = blocking
-		0x0E = immoveable
-		0x0F = blocks missile
-		0x10 = blocks monster movement
-		0x11 = equipable
-		0x12 = hangable (wall item)
-		0x13 = horizontal (wall item)
-		0x14 = vertical (wall item)
-		0x15 = rotateable
-		0x16 = light info
-		0x17 = unknown?
-		0x18 = floor change down?
-		0x19 = draw offset
-		0x1A = height
-		0x1B = draw with height offset for all parts (2x2) of the sprite,
-		0x1C = offset life-bar (for larger monsters)
-		0x1D = minimap color
-		0x1E = floor change?
-		0x1F = unknown?
-		*/
-
-		/* The end of the flag values are indicated by a 0xFF byte */
-		if ((flag = fgetc(fp)) == 0xFF)
-			break;
-
-		switch (flag) {
-		case 0x00: /* ground tile is followed by a 2 byte value indicating the speed */
-		case 0x09: /* writeable is followed by a 2 byte value indicating the max text length */
-		case 0x0A: /* readable is followed by a 2 byte value indicating the max text length */
-		case 0x1A: /* height is followed by a 2 byte value indicating the draw height(? ) */
-		case 0x1D: /* minimap color is followed by a 2 byte value indicating the minimap color */
-		case 0x1E: /* floor change? is followed by a 1 byte value indicating one of these values  (86 - openable holes, 
-				   77 - can be used to go down, 76 - can be used to go up, 82 - stairs up, 79 - switch) then another 1 
-				   byte value that always returns 4*/
-			fseek(fp, 2, SEEK_CUR);
-			break;
-
-		case 0x16: /* light info is followed by a 2 byte value indicating the light level then another 2 byte value indicating the light color */
-		case 0x19: /* draw offset is followed bye a 2 byte value indicating the x offset then another 2 byte value indicating the y offset */
-			fseek(fp, 4, SEEK_CUR);
-			break;
-
-		case 0x01:
-		case 0x02:
-		case 0x03:
-		case 0x04:
-		case 0x05:
-		case 0x06:
-		case 0x07:
-		case 0x08:
-		case 0x0B:
-		case 0x0C:
-		case 0x0D:
-		case 0x0E:
-		case 0x0F:
-		case 0x10:
-		case 0x11:
-		case 0x12:
-		case 0x13:
-		case 0x14:
-		case 0x15:
-		case 0x17:
-		case 0x18:
-		case 0x1B:
-		case 0x1C:
-		case 0x1F:
-			break;
-
-		default:
-			if (flag > 0x2F)
-				critical("Failed to load item of id %d; Unknown byte 0x%x.\n", id, flag);
-			break;
-		}
-	}
-
-	ret->width  = fgetc(fp);
-	ret->height = fgetc(fp);
-
-	/* if the width or height is greater than 1 you have to skip the next byte then the byte after it is blend frames */
-	if (ret->width > 1 || ret->height > 1)
-		fgetc(fp);
-
-	/* number of sprites (width * height * blend frames * divx * divy * divz * animation length) */
-	uint8_t blend_frames, divx, divy, divz, animation_length;
-	blend_frames = fgetc(fp);
-	divx = fgetc(fp);
-	divy = fgetc(fp);
-	divz = fgetc(fp);
-	animation_length = fgetc(fp);
-
-	ret->spriteCount = ret->width * ret->height * (int)blend_frames * (int)divx * (int)divy * (int)divz * (int)animation_length;
-	if (!(ret->spriteIds = calloc(ret->spriteCount, sizeof(uint16_t))))
-		critical("Cannot allocate sprite ids of count %d (item id %d)", ret->spriteCount, ret->id);
-
-	int i;
-	uint16_t spriteId;
-	size_t n;
-	for (i = 0; i < (int)ret->spriteCount; ++i) {
-		n = fread(&spriteId, 2, 1, fp);
-		if (n != 1)
-			continue;
-
-		ret->spriteIds[i] = spriteId;
-	}
-
-	return ret;
-}
-
-static itemlist_t *load_dat(const char *f, int *maxCount)
-{
 	FILE *fp;
-	item_t *n;
-	itemlist_t *list;
-	uint16_t id;
-	uint16_t datVer, itemsCount, creaturesCount, effectsCount, misslesCount;
-	uint16_t total;
+	thingtype_t *n;
+	thingtypelist_t *list, *listTail;
+	uint16 id;
+	int category;
+
+	uint32 datSignature;
+	uint16 contentRevision;
+
+	uint16 itemsCount, creaturesCount, effectsCount, missilesCount;
+	uint16 total;
 
 	fp = fopen(f, "rb");
 	if (!fp)
 		return NULL;
 
-	if (!(list = itemlist_init())) {
+	if (!(list = thingtypelist_init()))
+	{
 		fclose(fp);
 		return NULL;
 	}
+	listTail = list;
 
-	fread(&datVer, 4, 1, fp);         /* signature, dat version */
-	fread(&itemsCount, 2, 1, fp);     /* item count */
-	fread(&creaturesCount, 2, 1, fp); /* outfit count */
-	fread(&effectsCount, 2, 1, fp);   /* effects count */
-	fread(&misslesCount, 2, 1, fp);   /* missles count(distance) */
+	fread(&datSignature, 4, 1, fp);         /* dat signature */
+	contentRevision = (uint16)(datSignature);
 
-	total = itemsCount + creaturesCount + effectsCount + misslesCount;
-	printf("DatVer:%d Items: %d Creatures: %d Effects: %d Missles: %d --  Total: %d\n",
-			datVer, itemsCount, creaturesCount, effectsCount, misslesCount, total);
+	total = 0;
+	for (category = 0; category < ThingLastCategory; ++category)
+	{
+		uint16 count;
+		fread(&count, 2, 1, fp);
+		thingTypes[category] = count;
+		total += count;
+
+		if (category == ThingCategoryItem)
+			total = total - 100 + 1;
+	}
+
+	itemsCount = thingTypes[ThingCategoryItem];     /* item count */
+	creaturesCount = thingTypes[ThingCategoryCreature]; /* outfit count */
+	effectsCount = thingTypes[ThingCategoryEffect];   /* effects count */
+	missilesCount = thingTypes[ThingCategoryMissile];   /* missiles count(distance) */
+
+	fprintf(stderr, "DatVer:%d Items: %d Creatures: %d Effects: %d Missiles: %d --  Total: %d\n",
+		    contentRevision, itemsCount, creaturesCount, effectsCount, missilesCount, total);
 
 	/* the first item(ID = 100) */
-	for (id = 100; id < total; ++id) {
-		n = item_unserialize(fp, id);
-		if (!n) {
-			fprintf(stderr, "Failed to unserialize dat item %hd.\n", id);
-			goto out;
-		}
+	for (category = 0; category < ThingLastCategory; ++category) {
+		uint16 firstId = 1;
+		if (category == ThingCategoryItem)
+			firstId = 100;
 
-		if (id > itemsCount)
-			n->iType = Creature;
-		else
-			n->iType = Item;
-		itemlist_append(list, n);
-		++(*maxCount);
+		for (id = firstId; id <= thingTypes[category]; ++id) {
+			n = thingtype_unserialize(fp, id, category);
+			if (!n) {
+				fprintf(stderr, "Failed to unserialize dat item %hd.\n", id);
+				goto out;
+			}
+
+			thingtypelist_append(listTail, n);
+			listTail = &(*listTail)->next;
+			++(*maxCount);
+		}
 	}
 
 out:
@@ -336,42 +108,60 @@ out:
 	return list;
 }
 
-static buffer_t *load_spr(const char *f, uint32_t *off, uint16_t *total)
+static buffer_t *
+load_spr(const char *f, int *off, int *total)
 {
 	buffer_t *bp;
+	uint32 signature;
+	int spritesCount;
+	int spritesOffset;
+
+	bool bGameSpritesU32;
+
+	bGameSpritesU32 = false;
 
 	bp = balloc(f);
 	if (!bp)
 		return NULL;
 
-	bseek(bp, 4);
-	*total  = bget16(bp);
-	*off = btell(bp);
+	signature = bget32(bp);
+
+	if (g_game_feature_bGameSpritesU32) {
+		spritesCount = bget32(bp);
+	}
+	else {
+		spritesCount = bget16(bp);
+	}
+
+	spritesOffset = btell(bp);
+
+	*off = spritesOffset;
+	*total = spritesCount;
 	return bp;
 }
 
 /** Based on OTClient's sprite loading.  Writes pixel into @bitmap  */
 #define SPRITE_DATA_SIZE 32 * 32 * 4
-static bool spr_write_pixels(uint16_t spriteId,
-				buffer_t *sp, uint32_t offset, uint16_t total, bitmap_t *bitmap)
+static bool 
+spr_write_pixels(uint16 spriteId, buffer_t *sp, int offset, int total, bitmap_t *bitmap)
 {
 	if (spriteId == 0)
 		return false;
 
 	bseek(sp, ((spriteId - 1) * 4) + offset);
-	uint32_t address  = bget32(sp);
+	uint32 address  = bget32(sp);
 	if (address == 0)
 		return false;
 	bseek(sp, address + 3);
 
-	uint16_t pixelSize = bget16(sp);
-	uint16_t x = 0, y = 0;
+	uint16 pixelSize = bget16(sp);
+	uint16 x = 0, y = 0;
 	int read = 0, writePos = 0, i;
 	pixel_t *pixel;
 
 	while (read < pixelSize && writePos < SPRITE_DATA_SIZE) {
-		uint16_t transparentPixels = bget16(sp);
-		uint16_t colorizedPixels   = bget16(sp);
+		uint16 transparentPixels = bget16(sp);
+		uint16 colorizedPixels   = bget16(sp);
 
 		for (i = 0; i < transparentPixels && writePos < SPRITE_DATA_SIZE; ++i) {
 			pixel = pixel_at(bitmap, x, y);
@@ -424,7 +214,8 @@ static bool spr_write_pixels(uint16_t spriteId,
 	return true;
 }
 
-static bool save_png(bitmap_t *bitmap, const char *path)
+static bool 
+save_png(bitmap_t *bitmap, const char *path)
 {
 	FILE *fp;
 	png_structp png = NULL;
@@ -468,7 +259,7 @@ static bool save_png(bitmap_t *bitmap, const char *path)
 	rows = png_malloc(png, bitmap->height * sizeof(png_byte *));
 	for (y = 0; y < bitmap->height; ++y) {
 		png_byte *row =
-			png_malloc(png, sizeof(uint8_t) * bitmap->width * pixelSize);
+			png_malloc(png, sizeof(uint8) * bitmap->width * pixelSize);
 		rows[y] = row;
 		for (x = 0; x < bitmap->width; ++x) {
 			pixel_t *pixel = pixel_at(bitmap, x, y);
@@ -492,28 +283,30 @@ static bool save_png(bitmap_t *bitmap, const char *path)
 	return true;
 }
 
-static void makedir(const char *__name)
+static void 
+makedir(const char *__name)
 {
 	/* Check if the directory already exists.  */
 	struct stat st;
 	if (stat(__name, &st) == 0)
 		return;
 
-	printf("Creating directory %s... ", __name);
+		printf("Creating directory %s... ", __name);
 #ifdef _WIN32
-	if (_mkdir(__name) == 0)
+	if (_mkdir(__name) != 0)
 #else
 	if (mkdir(__name, 0777) != 0)
 #endif
 		critical("Failed!");
-	printf("Success\n");
+		printf("Success\n");
 }
 
-int main(int argc, char *argv[])
+int 
+main(int argc, char *argv[])
 {
 	char *dumpFolder = NULL;
 
-	int option;
+	/*int option;*/
 	struct optparse options;
 	
 	optparse_init(&options, argv);
@@ -539,17 +332,19 @@ int main(int argc, char *argv[])
 	if (NULL == dumpFolder)
 		critical("Usage: %s <folder to dump into>", argv[0]);
 
-	itemlist_t *list;
-	item_t *it;
+	set_client_version(1098);
+
+	thingtypelist_t *list;
+	thingtype_t *it;
 	int maxCount = 0;
 
 	if (!(list = load_dat("./Tibia.dat", &maxCount)))
 		critical("Failed to load Tibia.dat!");
 
-	uint32_t sp_off;
-	uint16_t sp_total;
-	buffer_t *sp = load_spr("./Tibia.spr", &sp_off, &sp_total);
-	if (!sp)
+	int sp_off;
+	int sp_total;
+	buffer_t *sp_buffer = load_spr("./Tibia.spr", &sp_off, &sp_total);
+	if (!sp_buffer)
 		critical("Failed to load Tibia.spr!");
 
 	printf("Total sprites found in Tibia.spr: %hd\n", sp_total);
@@ -561,36 +356,57 @@ int main(int argc, char *argv[])
 		makedir(dumpFolder);
 
 		char tmpf[512];
-		snprintf(tmpf, sizeof(tmpf), "%s/Items", dumpFolder);
+
+		snprintf(tmpf, sizeof(tmpf), "%s\\Items", dumpFolder);
 		makedir(tmpf);
-		snprintf(tmpf, sizeof(tmpf), "%s/Creatures", dumpFolder);
+
+		snprintf(tmpf, sizeof(tmpf), "%s\\Creatures", dumpFolder);
+		makedir(tmpf);
+
+		snprintf(tmpf, sizeof(tmpf), "%s\\Effects", dumpFolder);
+		makedir(tmpf);
+
+		snprintf(tmpf, sizeof(tmpf), "%s\\Missiles", dumpFolder);
 		makedir(tmpf);
 	}
 
 #define MAX_FAILED_SIZE (1<<13)
 	int count = 0, countFailed = 0, i, num;
-	uint32_t failedIds[MAX_FAILED_SIZE];
+	uint32 failedIds[MAX_FAILED_SIZE];
 	char *type;
 
 	printf("Now dumping sprites into %s (This may take some time)...\n", dumpFolder);
 	fflush(stdout);
 
-	foreach_item(list, it) {
+	foreach_thingtype(list, it) {
 		/* Loop each sprite in this item, an item can have several
 		 * sprites, for example if it's a creature it will have all
 		 * of the possible creature directions. For an item
 		 * it perhaps can contain the other parts if it's large (citation needed).  */
-		if (it->iType == Item)
+		switch (it->category) {
+		case ThingCategoryItem:
 			type = "Items";
-		else
+			break;
+		case ThingCategoryCreature:
 			type = "Creatures";
+			break;
+		case ThingCategoryEffect:
+			type = "Effects";
+			break;
+		case ThingCategoryMissile:
+			type = "Missiles";
+			break;
+		default:
+			type = "Unknown";
+			break;
+		}
 
 		for (num = 0, i = 0; i < (int)it->spriteCount; ++i) {
 			bitmap_t bmp;
 
 			bmp.width = bmp.height = 32;
 			bmp.pixels = calloc(sizeof(pixel_t), 32 * 32);
-			if (!spr_write_pixels(it->spriteIds[i], sp, sp_off, sp_total, &bmp)) {
+			if (!spr_write_pixels(it->spriteIds[i], sp_buffer, sp_off, sp_total, &bmp)) {
 				/* FIXME: Usually when the spr_write_pixels returns false, all of the
 				 * item sprites are corrupt, which is extremely odd.
 				 * This happens when loading Tibia files of 8.6, haven't tested
@@ -603,9 +419,9 @@ int main(int argc, char *argv[])
 
 			char filename[512];
 			/* ./dumpFolder/ItemType/ItemId_sNumSprite/  */
-			if (!o_snprintf(filename, 512, "%s/%s/%d_s%d.png", dumpFolder, type, it->id, num++))
+			if (!o_snprintf(filename, 512, "%s/%s/%d_s%3d.png", dumpFolder, type, it->id, num++))
 				abort();
-			if (!save_png(&bmp, filename))
+				if (!save_png(&bmp, filename))
 				abort();
 
 			free(bmp.pixels);
@@ -641,8 +457,7 @@ int main(int argc, char *argv[])
 	}
 	putchar('\n');
 
-	itemlist_destroy(list);
-	bfree(sp);
+	thingtypelist_destroy(list);
+	bfree(sp_buffer);
 	return 0;
 }
-

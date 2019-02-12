@@ -203,3 +203,6 @@ pip-log.txt
 thirdparty/boost_1_69_0/
 libANGLE.lib
 
+
+*.idb
+output/

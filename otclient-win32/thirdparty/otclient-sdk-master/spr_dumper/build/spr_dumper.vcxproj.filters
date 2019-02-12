@@ -21,6 +21,18 @@
     <ClInclude Include="..\src\optparse.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\thingtype.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\itemtype.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\animator.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.c">
@@ -34,6 +46,12 @@
     </ClCompile>
     <ClCompile Include="..\src\snprintf\fast_memcpy.c">
       <Filter>src\snprintf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\thingtype.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\animator.c">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

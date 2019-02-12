@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "otclient", "otclient.vcxproj", "{17A8F78F-1FFB-4128-A3B3-59CC6C19D89A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glew_shared", "..\thirdparty\otclient-sdk-master\glew-cmake-master\build\vc15\glew_shared.vcxproj", "{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,14 @@ Global
 		{17A8F78F-1FFB-4128-A3B3-59CC6C19D89A}.Release|Win32.Build.0 = Release|Win32
 		{17A8F78F-1FFB-4128-A3B3-59CC6C19D89A}.Release|x64.ActiveCfg = Release|x64
 		{17A8F78F-1FFB-4128-A3B3-59CC6C19D89A}.Release|x64.Build.0 = Release|x64
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Debug|Win32.Build.0 = Debug|Win32
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Debug|x64.ActiveCfg = Debug|x64
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Debug|x64.Build.0 = Debug|x64
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Release|Win32.ActiveCfg = Release|Win32
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Release|Win32.Build.0 = Release|Win32
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Release|x64.ActiveCfg = Release|x64
+		{55AE3D72-7DE6-F19F-AEF2-9AE8CA26CF3D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
